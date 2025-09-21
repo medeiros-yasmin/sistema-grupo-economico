@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Unidades;
 use App\Http\Livewire\Colaboradores;
 
+use App\Http\Livewire\RelatorioColaboradores;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -17,5 +19,9 @@ Route::get('/bandeiras', Bandeiras::class)->name('bandeiras');
 Route::get('/unidades', Unidades::class)->name('unidades');
 
 Route::get('/colaboradores', Colaboradores::class)->name('colaboradores');
+
+
+
+Route::get('/relatorio-colaboradores', RelatorioColaboradores::class)->name('relatorio-colaboradores');
 
 
