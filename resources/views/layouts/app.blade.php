@@ -3,6 +3,8 @@
 <head>
     <title>Sistema Grupo Econômico</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Adicione esta linha para os ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -41,7 +43,8 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container py-4">
-        {{ $slot ?? '' }}
+        <!--{{ $slot ?? '' }} -->
+         @yield('content')
     </main>
 </body>
 </html>
