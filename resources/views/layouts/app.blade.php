@@ -43,8 +43,8 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container py-4">
-        <!--{{ $slot ?? '' }} -->
-         @yield('content')
+        {{ $slot ?? '' }} 
+        <!-- @yield('content')-->
     </main>
 </body>
 </html>

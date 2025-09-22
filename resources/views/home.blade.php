@@ -82,6 +82,17 @@
                             </div>
                         </div>
 
+                        <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+            <i class="bi bi-clock-history display-4 text-dark mb-3"></i>
+            <h5 class="card-title">Auditoria</h5>
+            <p class="card-text">Registro de todas as alterações no sistema</p>
+            <a href="{{ route('audit.index') }}" class="btn btn-dark">Acessar</a>
+        </div>
+    </div>
+</div>
+
                         <!-- Sair -->
                         <div class="col-md-4 mb-4">
                             <div class="card h-100 shadow-sm">
