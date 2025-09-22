@@ -45,12 +45,12 @@ class AuditLog extends Model
         return $query->where('action', $action);
     }
 
-    // Método para formatar a ação
+    // Método para formatar a ação - CORRIGIDO
     public function getActionDescriptionAttribute()
     {
         $actions = [
             'CREATE' => 'Criado',
-            'UPDATE' => 'Atualizado',
+            'UPDATE' => 'Atualizado', 
             'DELETE' => 'Excluído'
         ];
 

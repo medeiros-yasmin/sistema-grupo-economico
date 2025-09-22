@@ -46,6 +46,7 @@ class AuditLogController extends Controller
 
     public function show(AuditLog $auditLog)
     {
+        $auditLog->load('user'); // Carrega a relação user
         return view('audit.show', compact('auditLog'));
     }
 }

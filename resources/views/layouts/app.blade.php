@@ -43,8 +43,11 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container py-4">
-        {{ $slot ?? '' }} 
-        <!-- @yield('content')-->
+        @if(!empty(trim($slot ?? '')))
+        {{ $slot }}
+    @else
+        @yield('content')
+    @endif
     </main>
 </body>
 </html>
