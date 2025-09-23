@@ -17,7 +17,8 @@
                     @endif
 
                     <div class="text-center mb-4">
-                        <h3>Bem-vindo, {{ Auth::user()->name }}! 👋</h3>
+                        <h3>Bem-vindo, {{ Auth::user()->name ?? 'Usuário' }}! 👋</h3>
+                        <!-- Adicione ?? 'Usuário' para quando user for null -->
                         <p class="text-muted">O que você gostaria de gerenciar hoje?</p>
                     </div>
 
