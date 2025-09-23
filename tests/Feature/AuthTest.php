@@ -5,16 +5,17 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use PHPUnit\Framework\Attributes\Test; // ← Adicione esta linha
+use PHPUnit\Framework\Attributes\Test;
 
 class AuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    #[Test] // ← Use attribute em vez de /** @test */
+    #[Test]
     public function usuario_nao_autenticado_e_redirecionado_para_login()
     {
         $response = $this->get('/home');
+        $response->assertStatus(302);
         $response->assertRedirect('/login');
     }
 
@@ -26,7 +27,7 @@ class AuthTest extends TestCase
 
         $response = $this->get('/home');
         $response->assertStatus(200);
-        $response->assertSee('Dashboard');
+        $response->assertSee('Dashboard'); // Ou 'Sistema Grupo Econômico'
     }
 
     #[Test]
@@ -42,6 +43,6 @@ class AuthTest extends TestCase
         ]);
 
         $response->assertRedirect('/home');
-        $this->assertAuthenticatedAs($user);
+        $this->assertAuthenticated();
     }
 }

@@ -17,7 +17,7 @@ Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout
 Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //Route::get('/home-test', [App\Http\Controllers\HomeController::class, 'index']);
 
@@ -27,7 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Rotas PROTEGIDAS (exigem login)
 Route::middleware(['auth'])->group(function () {
-    
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/grupos-economicos', GruposEconomicos::class)->name('grupos-economicos');
     Route::get('/bandeiras', Bandeiras::class)->name('bandeiras');
     Route::get('/unidades', Unidades::class)->name('unidades');
