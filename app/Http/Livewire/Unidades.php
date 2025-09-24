@@ -13,6 +13,8 @@ class Unidades extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     // Campos do formulário
     public $nome_fantasia;
     public $razao_social;

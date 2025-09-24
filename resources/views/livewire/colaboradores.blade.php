@@ -118,7 +118,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $colaboradores->links() }}
+            {{ $colaboradores->links('pagination::bootstrap-5') }}
             @else
                 <div class="text-center py-5">
                     <h5 class="text-muted">Nenhum colaborador cadastrado.</h5>

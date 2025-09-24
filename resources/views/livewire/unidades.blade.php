@@ -114,7 +114,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $unidades->links() }}
+            {{ $unidades->links('pagination::bootstrap-5') }}
             @else
                 <div class="text-center py-5">
                     <h5 class="text-muted">Nenhuma unidade cadastrada.</h5>

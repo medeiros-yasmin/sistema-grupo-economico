@@ -127,7 +127,7 @@
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <div>Mostrando {{ $colaboradores->firstItem() }} a {{ $colaboradores->lastItem() }} de {{ $colaboradores->total() }} registros</div>
                 <div>
-                    {{ $colaboradores->links() }}
+                    {{ $colaboradores->links('pagination::bootstrap-5') }}
                 </div>
             </div>
             @else

@@ -14,6 +14,8 @@ class GruposEconomicos extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     // Campos do formulário
     public $nome;
     public $editId = null;

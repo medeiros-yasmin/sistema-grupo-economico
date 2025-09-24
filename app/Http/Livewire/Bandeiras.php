@@ -13,6 +13,8 @@ class Bandeiras extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     // Campos do formulário
     public $nome;
     public $grupo_economico_id;

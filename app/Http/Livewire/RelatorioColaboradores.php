@@ -21,6 +21,8 @@ class RelatorioColaboradores extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     // Filtros
     public $search_nome;
     public $search_cpf;

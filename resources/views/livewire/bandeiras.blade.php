@@ -95,7 +95,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $bandeiras->links() }}
+            {{ $bandeiras->links('pagination::bootstrap-5') }}
             @else
                 <div class="text-center py-5">
                     <i class="bi bi-inbox display-1 text-muted"></i>

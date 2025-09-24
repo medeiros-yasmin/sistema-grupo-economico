@@ -90,7 +90,7 @@
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <div>Mostrando {{ $gruposEconomicos->firstItem() }} a {{ $gruposEconomicos->lastItem() }} de {{ $gruposEconomicos->total() }} registros</div>
                 <div>
-                    {{ $gruposEconomicos->links() }}
+                    {{ $gruposEconomicos->links('pagination::bootstrap-5') }}
                 </div>
             </div>
             @else
