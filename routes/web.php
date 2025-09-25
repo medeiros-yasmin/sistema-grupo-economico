@@ -7,6 +7,8 @@ use App\Http\Livewire\Colaboradores;
 use App\Http\Livewire\RelatorioColaboradores;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuditLogController;
+use App\Http\Controllers\AuditController;
+use App\Http\Controllers\ExportController;
 
 // Rotas de Autenticação MANUALMENTE
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
@@ -35,6 +37,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/relatorio-colaboradores', RelatorioColaboradores::class)->name('relatorio-colaboradores');
     Route::get('/auditoria', [AuditLogController::class, 'index'])->name('audit.index');
     Route::get('/auditoria/{auditLog}', [AuditLogController::class, 'show'])->name('audit.show');
+
+     // Auditoria
+    Route::get('/auditoria', [AuditController::class, 'index'])->name('audit.index');
+    
+    // Exportação
+    Route::get('/exportar/auditoria', [ExportController::class, 'auditReport'])->name('export.audit.form');
+    Route::post('/exportar/auditoria', [ExportController::class, 'exportAudit'])->name('export.audit');
     
 });
 
