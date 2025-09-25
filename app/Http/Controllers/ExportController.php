@@ -68,11 +68,14 @@ class ExportController extends Controller
         try {
             ExportAuditLogs::dispatch($filters, auth()->id());
             
-            return back()->with('success', 'Exportação em processamento. Você receberá uma notificação quando o arquivo estiver pronto.');
+           return back()->with('success', 
+            'Exportação em processamento! Você receberá uma notificação quando o arquivo estiver pronto. ' .
+            'ID do processo: ' . now()->format('YmdHis')
+        );
             
         } catch (\Exception $e) {
             \Log::error('Erro ao disparar job de exportação: ' . $e->getMessage());
-            return back()->with('error', 'Erro ao iniciar exportação: ' . $e->getMessage());
+            return back()->with('error', 'Erro ao iniciar exportação em background.');
         }
     }
 }
